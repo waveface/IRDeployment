@@ -1,11 +1,11 @@
 #!/bin/bash --
 
-ENV_FILE="`dirname $0`/environment.sh"
-if [ ! -f $ENV_FILE ]; then
+ENV_FILE=`find "$WORKSPACE" -name environment.sh | head -1`
+if [ ! -f "$ENV_FILE" ]; then
     echo "environment.sh not found.  Consult environment-template.sh."
 	exit 1
 fi
-source $ENV_FILE
+source "$ENV_FILE"
 
 function die () {
 	echo "$1"; exit 1
