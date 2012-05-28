@@ -1,6 +1,6 @@
 #!/bin/bash --
 
-ENV_FILE="`dirname $0`/environment.sh"
+ENV_FILE=`find "$WORKSPACE" -name environment.sh | head -1`
 if [ ! -f $ENV_FILE ]; then
     echo "environment.sh not found.  Consult environment-template.sh."
 	exit 1
